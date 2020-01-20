@@ -1,5 +1,5 @@
 //
-//  Home.swift
+//  HomeModel.swift
 //  target-apple-tv
 //
 //  Created by Beau Nouvelle on 20/1/20.
@@ -21,8 +21,7 @@ struct HomeModel: Decodable {
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        print(values)
-        categoryItems = try? values.decode([CategoryItem].self, forKey: .categoryItems).filter { $0.image != nil && $0.url != nil }
+        categoryItems = try? values.decode([CategoryItem].self, forKey: .categoryItems)
     }
 
 }

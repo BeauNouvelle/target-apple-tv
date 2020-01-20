@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  target-apple-tv
 //
 //  Created by Beau Nouvelle on 20/1/20.
@@ -8,30 +8,29 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
 
     @State private var home: HomeModel?
- 
+
     var body: some View {
-        VStack {
-            List {
-                ScrollView(.horizontal) {
-                    HStack {
-                        Text("THIS")
-//                        ForEach(products) { product in
-//                            ProductTile(product: product)
-//                        }
-                    }
+        ScrollView {
+            HStack {
+                ForEach(home?.categoryItems ?? []) { category in
+                    CategoryTile(category: category).frame(width: 200, height: 400, alignment: .center)
+                    Divider()
                 }
-            }.onAppear(perform: loadData)
-        }
+            }
+        }.onAppear(perform: loadData)
+            .frame(height: 400)
     }
 
     func loadData() {
         HomeService.homeModel { (result) in
             switch result {
             case .success(let model):
-                self.home = model
+                DispatchQueue.main.async {
+                    self.home = model
+                }
             case .failure(let error):
                 print(error.message)
             }
@@ -39,8 +38,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }

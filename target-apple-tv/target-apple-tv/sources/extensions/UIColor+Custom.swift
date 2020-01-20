@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIColor {
+    static let targetRed = #colorLiteral(red: 0.7294117647, green: 0, blue: 0, alpha: 1)
+}
