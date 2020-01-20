@@ -26,8 +26,8 @@ struct HomeService {
 
         components.path = "/navigation/home"
 
-        let heroCountQuery = URLQueryItem(name: "countOfHeroItems", value: "0")
-        let includeHeroListQuery = URLQueryItem(name: "includeHeroList", value: "false")
+        let heroCountQuery = URLQueryItem(name: "countOfHeroItems", value: "10")
+        let includeHeroListQuery = URLQueryItem(name: "includeHeroList", value: "true")
         let includeCategories = URLQueryItem(name: "includeCategories", value: "true")
         let includeLookItems = URLQueryItem(name: "includeLookItems", value: "false")
         let shouldSmartSort = URLQueryItem(name: "smartSort", value: "true")

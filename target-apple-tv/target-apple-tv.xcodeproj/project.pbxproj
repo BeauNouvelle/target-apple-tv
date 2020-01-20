@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8B5D52B123D5143800A914D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D52B023D5143800A914D0 /* AppDelegate.swift */; };
-		8B5D52B323D5143800A914D0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D52B223D5143800A914D0 /* HomeView.swift */; };
 		8B5D52B523D5143900A914D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5D52B423D5143900A914D0 /* Assets.xcassets */; };
 		8B5D52B823D5143900A914D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5D52B723D5143900A914D0 /* Preview Assets.xcassets */; };
 		8B5D52BB23D5143900A914D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B5D52B923D5143900A914D0 /* LaunchScreen.storyboard */; };
@@ -30,12 +29,19 @@
 		8B5D52F023D5567F00A914D0 /* String+Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D52EF23D5567F00A914D0 /* String+Match.swift */; };
 		8B5D52F223D556A200A914D0 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D52F123D556A200A914D0 /* Notifications.swift */; };
 		8B5D52F623D557D100A914D0 /* CategoryTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D52F523D557D100A914D0 /* CategoryTile.swift */; };
+		8B708C0B23D569C30086CFC2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B708C0A23D569C30086CFC2 /* SnapKit */; };
+		8B708C0D23D56A050086CFC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C0C23D56A050086CFC2 /* HomeViewController.swift */; };
+		8B708C0F23D56E120086CFC2 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C0E23D56E120086CFC2 /* CategoryCollectionViewCell.swift */; };
+		8B708C1123D56ECB0086CFC2 /* UICollectionReusableView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C1023D56ECB0086CFC2 /* UICollectionReusableView+Identifier.swift */; };
+		8B708C1323D56EEB0086CFC2 /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C1223D56EEB0086CFC2 /* UICollectionView+Register.swift */; };
+		8B708C1523D56F070086CFC2 /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C1423D56F070086CFC2 /* UICollectionView+Dequeue.swift */; };
+		8B708C1823D581190086CFC2 /* HeroItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C1723D581190086CFC2 /* HeroItem.swift */; };
+		8B708C1A23D582230086CFC2 /* HeroItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C1923D582230086CFC2 /* HeroItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B5D52AD23D5143800A914D0 /* target-apple-tv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "target-apple-tv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B5D52B023D5143800A914D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B5D52B223D5143800A914D0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8B5D52B023D5143800A914D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8B5D52B423D5143900A914D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B5D52B723D5143900A914D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B5D52BA23D5143900A914D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +63,13 @@
 		8B5D52EF23D5567F00A914D0 /* String+Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Match.swift"; sourceTree = "<group>"; };
 		8B5D52F123D556A200A914D0 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		8B5D52F523D557D100A914D0 /* CategoryTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTile.swift; sourceTree = "<group>"; };
+		8B708C0C23D56A050086CFC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8B708C0E23D56E120086CFC2 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B708C1023D56ECB0086CFC2 /* UICollectionReusableView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Identifier.swift"; sourceTree = "<group>"; };
+		8B708C1223D56EEB0086CFC2 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
+		8B708C1423D56F070086CFC2 /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
+		8B708C1723D581190086CFC2 /* HeroItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroItem.swift; sourceTree = "<group>"; };
+		8B708C1923D582230086CFC2 /* HeroItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5D52CC23D5388700A914D0 /* KingfisherSwiftUI in Frameworks */,
+				8B708C0B23D569C30086CFC2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +140,8 @@
 			children = (
 				8B5D52C623D537FB00A914D0 /* ProductTile.swift */,
 				8B5D52F523D557D100A914D0 /* CategoryTile.swift */,
+				8B708C0E23D56E120086CFC2 /* CategoryCollectionViewCell.swift */,
+				8B708C1923D582230086CFC2 /* HeroItemCollectionViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -133,7 +149,7 @@
 		8B5D52C423D52F7E00A914D0 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				8B5D52B223D5143800A914D0 /* HomeView.swift */,
+				8B708C0C23D56A050086CFC2 /* HomeViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -141,6 +157,7 @@
 		8B5D52C523D52F8100A914D0 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8B708C1623D5810A0086CFC2 /* Hero */,
 				8B5D52E223D5504A00A914D0 /* categories */,
 				8B5D52E123D5504000A914D0 /* productListing */,
 			);
@@ -165,6 +182,9 @@
 				8B5D52DD23D53AD300A914D0 /* URLRequest+TargetHeaders.swift */,
 				8B5D52DF23D53B6D00A914D0 /* Error+Connectivity.swift */,
 				8B5D52EF23D5567F00A914D0 /* String+Match.swift */,
+				8B708C1023D56ECB0086CFC2 /* UICollectionReusableView+Identifier.swift */,
+				8B708C1223D56EEB0086CFC2 /* UICollectionView+Register.swift */,
+				8B708C1423D56F070086CFC2 /* UICollectionView+Dequeue.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -189,6 +209,14 @@
 			path = categories;
 			sourceTree = "<group>";
 		};
+		8B708C1623D5810A0086CFC2 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				8B708C1723D581190086CFC2 /* HeroItem.swift */,
+			);
+			path = Hero;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +235,7 @@
 			name = "target-apple-tv";
 			packageProductDependencies = (
 				8B5D52CB23D5388700A914D0 /* KingfisherSwiftUI */,
+				8B708C0A23D569C30086CFC2 /* SnapKit */,
 			);
 			productName = "target-apple-tv";
 			productReference = 8B5D52AD23D5143800A914D0 /* target-apple-tv.app */;
@@ -238,6 +267,7 @@
 			mainGroup = 8B5D52A423D5143800A914D0;
 			packageReferences = (
 				8B5D52CA23D5388700A914D0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8B708C0923D569C30086CFC2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8B5D52AE23D5143800A914D0 /* Products */;
 			projectDirPath = "";
@@ -267,11 +297,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5D52C723D537FB00A914D0 /* ProductTile.swift in Sources */,
+				8B708C1323D56EEB0086CFC2 /* UICollectionView+Register.swift in Sources */,
 				8B5D52C923D5381500A914D0 /* ProductListingItem.swift in Sources */,
+				8B708C1A23D582230086CFC2 /* HeroItemCollectionViewCell.swift in Sources */,
 				8B5D52DC23D53A9600A914D0 /* ProductListingVariant.swift in Sources */,
+				8B708C1523D56F070086CFC2 /* UICollectionView+Dequeue.swift in Sources */,
 				8B5D52D323D5396D00A914D0 /* HTTPError.swift in Sources */,
 				8B5D52CE23D538EF00A914D0 /* ProductListing.swift in Sources */,
-				8B5D52B323D5143800A914D0 /* HomeView.swift in Sources */,
 				8B5D52E823D5512100A914D0 /* HomeService.swift in Sources */,
 				8B5D52D523D5397D00A914D0 /* HTTPService.swift in Sources */,
 				8B5D52E623D550EE00A914D0 /* HomeModel.swift in Sources */,
@@ -281,9 +313,13 @@
 				8B5D52D723D539C100A914D0 /* ProductListingMetadata.swift in Sources */,
 				8B5D52F223D556A200A914D0 /* Notifications.swift in Sources */,
 				8B5D52F023D5567F00A914D0 /* String+Match.swift in Sources */,
+				8B708C0D23D56A050086CFC2 /* HomeViewController.swift in Sources */,
 				8B5D52E423D5509100A914D0 /* CategoryItem.swift in Sources */,
+				8B708C0F23D56E120086CFC2 /* CategoryCollectionViewCell.swift in Sources */,
 				8B5D52DA23D53A3300A914D0 /* UIColor+Custom.swift in Sources */,
 				8B5D52B123D5143800A914D0 /* AppDelegate.swift in Sources */,
+				8B708C1123D56ECB0086CFC2 /* UICollectionReusableView+Identifier.swift in Sources */,
+				8B708C1823D581190086CFC2 /* HeroItem.swift in Sources */,
 				8B5D52E023D53B6D00A914D0 /* Error+Connectivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +524,14 @@
 				minimumVersion = 5.13.0;
 			};
 		};
+		8B708C0923D569C30086CFC2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -495,6 +539,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B5D52CA23D5388700A914D0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;
+		};
+		8B708C0A23D569C30086CFC2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B708C0923D569C30086CFC2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
