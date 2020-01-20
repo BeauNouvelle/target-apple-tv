@@ -12,7 +12,7 @@ import Foundation
 /// Will return products and their associated variants.
 struct ProductListingService {
 
-    static let apiHost = "https://app.target.com"
+    static let apiHost = "https://app.target.com.au"
 
     typealias ProductListingResult = Result<ProductListing, HTTPError>
 

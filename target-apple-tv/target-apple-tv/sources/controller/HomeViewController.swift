@@ -13,12 +13,14 @@ import Kingfisher
 
 final class HomeViewController: UIViewController {
 
-    private var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private var heroCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private var categoryCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     private var homeModel: HomeModel? {
         didSet {
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+                self.heroCollectionView.reloadData()
+                self.categoryCollectionView.reloadData()
             }
         }
     }
@@ -30,14 +32,41 @@ final class HomeViewController: UIViewController {
     }
 
     private func setupSubviews() {
-        view.addSubview(collectionView)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(cellClass: CategoryCollectionViewCell.self)
-        collectionView.register(cellClass: HeroItemCollectionViewCell.self)
 
-        collectionView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+        // HERO
+        let heroLayout = UICollectionViewFlowLayout()
+        heroLayout.scrollDirection = .horizontal
+        heroLayout.sectionInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+
+        heroCollectionView = UICollectionView(frame: .zero, collectionViewLayout: heroLayout)
+
+        view.addSubview(heroCollectionView)
+
+        heroCollectionView.delegate = self
+        heroCollectionView.dataSource = self
+        heroCollectionView.register(cellClass: HeroItemCollectionViewCell.self)
+
+        heroCollectionView.snp.makeConstraints { (make) in
+            make.top.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.snp.centerY).offset(150)
+        }
+
+        // CATEGORY
+        let categoryLayout = UICollectionViewFlowLayout()
+        categoryLayout.scrollDirection = .horizontal
+        categoryLayout.sectionInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+
+        categoryCollectionView = UICollectionView(frame: .zero, collectionViewLayout: categoryLayout)
+
+        view.addSubview(categoryCollectionView)
+
+        categoryCollectionView.delegate = self
+        categoryCollectionView.dataSource = self
+        categoryCollectionView.register(cellClass: CategoryCollectionViewCell.self)
+
+        categoryCollectionView.snp.makeConstraints { (make) in
+            make.leading.bottom.trailing.equalToSuperview()
+            make.top.equalTo(view.snp.centerY)
         }
     }
 
@@ -56,18 +85,18 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
+        if collectionView == heroCollectionView {
             return homeModel?.heroItems?.count ?? 0
         }
         return homeModel?.categoryItems?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
+        if collectionView == heroCollectionView {
             let cell = collectionView.dequeue(cellClass: HeroItemCollectionViewCell.self, forIndexPath: indexPath)
             let heroItem = homeModel?.heroItems?[indexPath.row]
             cell.imageView.kf.setImage(with: heroItem?.image)
@@ -83,14 +112,22 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == heroCollectionView, let category = homeModel?.heroItems?[indexPath.row].url?.lastPathComponent {
+            let viewController = ProductListingViewController(productCategory: category)
+            present(viewController, animated: true, completion: nil)
+        } else if let category = homeModel?.categoryItems?[indexPath.row].url?.lastPathComponent {
+            let viewController = ProductListingViewController(productCategory: category)
+            present(viewController, animated: true, completion: nil)
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 {
-            return CGSize(width: 570, height: 380)
+        if collectionView == heroCollectionView {
+            return CGSize(width: 600, height: 400)
         }
         return CGSize(width: 250, height: 250)
     }
