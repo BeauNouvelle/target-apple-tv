@@ -17,8 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = HomeViewController()
         self.window = window
+
+        let homeVC = HomeViewController()
+        homeVC.tabBarItem.title = "Browse"
+
+        let searchVC = SearchViewController()
+        searchVC.tabBarItem.title = "Search"
+
+        let favoritestVC = FavoritesViewController()
+        favoritestVC.tabBarItem.title = "Favorites"
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [homeVC, searchVC, favoritestVC]
+        window.rootViewController = tabBarController
+        
         window.makeKeyAndVisible()
         return true
     }

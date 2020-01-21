@@ -52,6 +52,8 @@
 		8B708C3A23D5BCFC0086CFC2 /* UILabel+Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C3923D5BCFC0086CFC2 /* UILabel+Rating.swift */; };
 		8B708C3C23D5C1E90086CFC2 /* UIFont+PreferredWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C3B23D5C1E90086CFC2 /* UIFont+PreferredWeight.swift */; };
 		8B708C3E23D5CB360086CFC2 /* ProductImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C3D23D5CB360086CFC2 /* ProductImageCollectionViewCell.swift */; };
+		8B708C6023D68DC50086CFC2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C5F23D68DC50086CFC2 /* SearchViewController.swift */; };
+		8B708C6223D68E1A0086CFC2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B708C6123D68E1A0086CFC2 /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		8B708C3923D5BCFC0086CFC2 /* UILabel+Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Rating.swift"; sourceTree = "<group>"; };
 		8B708C3B23D5C1E90086CFC2 /* UIFont+PreferredWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+PreferredWeight.swift"; sourceTree = "<group>"; };
 		8B708C3D23D5CB360086CFC2 /* ProductImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B708C5F23D68DC50086CFC2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8B708C6123D68E1A0086CFC2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,8 @@
 				8B708C0C23D56A050086CFC2 /* HomeViewController.swift */,
 				8B708C1B23D589820086CFC2 /* ProductListingViewController.swift */,
 				8B708C2123D5A7170086CFC2 /* ProductDetailsViewController.swift */,
+				8B708C5F23D68DC50086CFC2 /* SearchViewController.swift */,
+				8B708C6123D68E1A0086CFC2 /* FavoritesViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -386,7 +392,9 @@
 				8B5D52F223D556A200A914D0 /* Notifications.swift in Sources */,
 				8B5D52F023D5567F00A914D0 /* String+Match.swift in Sources */,
 				8B708C0D23D56A050086CFC2 /* HomeViewController.swift in Sources */,
+				8B708C6023D68DC50086CFC2 /* SearchViewController.swift in Sources */,
 				8B5D52E423D5509100A914D0 /* CategoryItem.swift in Sources */,
+				8B708C6223D68E1A0086CFC2 /* FavoritesViewController.swift in Sources */,
 				8B708C0F23D56E120086CFC2 /* CategoryCollectionViewCell.swift in Sources */,
 				8B708C3223D5AA6C0086CFC2 /* ProductDetailsService.swift in Sources */,
 				8B5D52DA23D53A3300A914D0 /* UIColor+Custom.swift in Sources */,
