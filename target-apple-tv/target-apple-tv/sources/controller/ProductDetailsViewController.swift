@@ -17,7 +17,11 @@ final class ProductDetailsViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 let color: String = self.traitCollection.userInterfaceStyle == .dark ? "white" : "black"
-                let featuresString = "<font color=\(color) face='-apple-system' size='24'>\(self.productDetails?.product.description ?? "")<br><br>"
+                let title = "<font color=\(color) face='-apple-system' size='24'><h3>\(self.productDetails?.product.name ?? "")</h3>"
+                self.titleLabel.attributedText = try? NSAttributedString(HTMLString: title)
+                self.ratingLabel.setRating(self.productDetails?.product.averageRating ?? 0, outOf: 5)
+                let description = self.productDetails?.product.description ?? ""
+                let featuresString = "<font color=\(color) face='-apple-system' size='24'>\(description)<br><br>"
                 self.textView.attributedText = try? NSAttributedString(HTMLString: featuresString)
             }
         }
@@ -34,6 +38,8 @@ final class ProductDetailsViewController: UIViewController {
     private let horizontalStackView = UIStackView()
     private var productImagesCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
+    private let titleLabel = UILabel()
+    private let ratingLabel = UILabel()
     private let textView = UITextView()
 
     init(productCode: String) {
@@ -69,10 +75,31 @@ final class ProductDetailsViewController: UIViewController {
 
         let firstVerticalStackView = UIStackView()
         firstVerticalStackView.axis = .vertical
+        firstVerticalStackView.addArrangedSubview(ratingLabel)
         firstVerticalStackView.addArrangedSubview(productImagesCollectionView)
+        productImagesCollectionView.snp.makeConstraints { (make) in
+            make.height.equalTo(300)
+        }
 
         horizontalStackView.addArrangedSubview(firstVerticalStackView)
-        horizontalStackView.addArrangedSubview(textView)
+        let secondVerticalStackView = UIStackView()
+        horizontalStackView.addArrangedSubview(secondVerticalStackView)
+        secondVerticalStackView.axis = .vertical
+        secondVerticalStackView.addArrangedSubview(titleLabel)
+        secondVerticalStackView.addArrangedSubview(textView)
+
+        titleLabel.clipsToBounds = true
+        titleLabel.numberOfLines = 2
+        titleLabel.font = .preferredFont(for: .headline, weight: .bold)
+        titleLabel.snp.makeConstraints { (make) in
+            make.leading.top.trailing.equalToSuperview().inset(20)
+        }
+
+        ratingLabel.textColor = #colorLiteral(red: 0.9764265418, green: 0.7961158156, blue: 0.2235357463, alpha: 1)
+        ratingLabel.snp.makeConstraints { (make) in
+            make.leading.top.equalToSuperview().inset(20)
+            make.height.equalTo(40)
+        }
 
         textView.panGestureRecognizer.allowedTouchTypes = [NSNumber(value: UITouch.TouchType.indirect.rawValue)]
         textView.isScrollEnabled = true

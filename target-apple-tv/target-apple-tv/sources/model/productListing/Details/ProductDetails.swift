@@ -18,6 +18,7 @@ struct Product: Decodable {
     let name: String
     let description: String
     let brand: String
+    let averageRating: Float?
     let targetVariantProductListerData: [VariantData]?
 }
 
