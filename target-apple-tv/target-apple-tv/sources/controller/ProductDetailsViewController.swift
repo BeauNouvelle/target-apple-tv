@@ -86,8 +86,11 @@ final class ProductDetailsViewController: UIViewController {
         firstVerticalStackView.axis = .vertical
         firstVerticalStackView.addArrangedSubview(ratingLabel)
         firstVerticalStackView.addArrangedSubview(productImagesCollectionView)
-        productImagesCollectionView.snp.makeConstraints { (make) in
-            make.height.equalTo(300)
+
+        ratingLabel.textColor = #colorLiteral(red: 0.9764265418, green: 0.7961158156, blue: 0.2235357463, alpha: 1)
+        ratingLabel.snp.makeConstraints { (make) in
+            make.leading.top.equalToSuperview().inset(20)
+            make.height.equalTo(40)
         }
 
         horizontalStackView.addArrangedSubview(firstVerticalStackView)
@@ -102,12 +105,6 @@ final class ProductDetailsViewController: UIViewController {
         titleLabel.font = .preferredFont(for: .headline, weight: .bold)
         titleLabel.snp.makeConstraints { (make) in
             make.leading.top.trailing.equalToSuperview().inset(20)
-        }
-
-        ratingLabel.textColor = #colorLiteral(red: 0.9764265418, green: 0.7961158156, blue: 0.2235357463, alpha: 1)
-        ratingLabel.snp.makeConstraints { (make) in
-            make.leading.top.equalToSuperview().inset(20)
-            make.height.equalTo(40)
         }
 
         textView.panGestureRecognizer.allowedTouchTypes = [NSNumber(value: UITouch.TouchType.indirect.rawValue)]
