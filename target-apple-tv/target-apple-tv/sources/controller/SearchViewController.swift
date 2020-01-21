@@ -17,13 +17,11 @@ final class SearchViewController: UIViewController {
         }
     }
     private var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    private let activityIndicator = UIActivityIndicatorView(style: .large)
 
     var productListing: ProductListing? {
         didSet {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -49,17 +47,9 @@ final class SearchViewController: UIViewController {
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-
-        view.addSubview(activityIndicator)
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-        }
     }
 
     private func loadData() {
-        activityIndicator.startAnimating()
-
         ProductListingService.productListingFor(productQueryParameter: .search(query: searchTerm ?? "all")) { (result) in
             switch result {
             case .failure(let error):
