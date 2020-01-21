@@ -11,8 +11,11 @@ import UIKit
 
 final class SearchViewController: UIViewController {
 
-    private var searchTerm: String?
-
+    private var searchTerm: String? {
+        didSet {
+            self.loadData()
+        }
+    }
     private var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let activityIndicator = UIActivityIndicatorView(style: .large)
 
@@ -65,6 +68,14 @@ final class SearchViewController: UIViewController {
                 self.productListing = listing
             }
         }
+    }
+
+}
+
+extension SearchViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        self.searchTerm = searchController.searchBar.text
     }
 
 }

@@ -14,22 +14,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let homeVC = HomeViewController()
+    let searchResultsController = SearchViewController()
+    let favoritestVC = FavoritesViewController()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
 
-        let homeVC = HomeViewController()
         homeVC.tabBarItem.title = "Browse"
 
-        let searchVC = SearchViewController()
+        let searchVC = UISearchController(searchResultsController: searchResultsController)
+        let searchContainer = UISearchContainerViewController(searchController: searchVC)
+        searchContainer.title = "Search"
         searchVC.tabBarItem.title = "Search"
+        searchVC.searchResultsUpdater = searchResultsController
 
-        let favoritestVC = FavoritesViewController()
         favoritestVC.tabBarItem.title = "Favorites"
 
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [homeVC, searchVC, favoritestVC]
+        tabBarController.viewControllers = [homeVC, searchContainer, favoritestVC]
         window.rootViewController = tabBarController
         
         window.makeKeyAndVisible()
@@ -55,4 +60,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
