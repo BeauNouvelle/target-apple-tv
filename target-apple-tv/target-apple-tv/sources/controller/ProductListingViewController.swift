@@ -41,7 +41,6 @@ final class ProductListingViewController: UIViewController {
     }
 
     private func setupSubviews() {
-
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)

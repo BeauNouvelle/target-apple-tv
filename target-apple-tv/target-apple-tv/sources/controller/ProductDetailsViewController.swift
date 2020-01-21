@@ -12,10 +12,13 @@ import SnapKit
 
 final class ProductDetailsViewController: UIViewController {
 
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     private let productCode: String
     private var productDetails: ProductDetails? {
         didSet {
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+
                 let color: String = self.traitCollection.userInterfaceStyle == .dark ? "white" : "black"
                 let title = "<font color=\(color) face='-apple-system' size='24'><h3>\(self.productDetails?.product.name ?? "")</h3>"
                 self.titleLabel.attributedText = try? NSAttributedString(HTMLString: title)
@@ -60,6 +63,12 @@ final class ProductDetailsViewController: UIViewController {
 
     private func setupSubviews() {
         view.addSubview(horizontalStackView)
+        view.addSubview(activityIndicator)
+        activityIndicator.hidesWhenStopped = true
+
+        activityIndicator.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
 
         horizontalStackView.axis = .horizontal
         horizontalStackView.snp.makeConstraints { (make) in
@@ -111,6 +120,8 @@ final class ProductDetailsViewController: UIViewController {
     }
 
     private func loadData() {
+        activityIndicator.startAnimating()
+
         ProductDetailsService.product(productCode: productCode) { [weak self] (result) in
             switch result {
             case .failure(let error):
