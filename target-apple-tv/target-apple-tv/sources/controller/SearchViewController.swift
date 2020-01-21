@@ -65,7 +65,9 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
-        self.searchTerm = searchController.searchBar.text
+        if self.searchTerm != searchController.searchBar.text {
+            self.searchTerm = searchController.searchBar.text
+        }
     }
 
 }
