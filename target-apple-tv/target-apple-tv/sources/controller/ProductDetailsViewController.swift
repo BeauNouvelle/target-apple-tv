@@ -88,10 +88,6 @@ final class ProductDetailsViewController: UIViewController {
         firstVerticalStackView.addArrangedSubview(productImagesCollectionView)
 
         ratingLabel.textColor = #colorLiteral(red: 0.9764265418, green: 0.7961158156, blue: 0.2235357463, alpha: 1)
-        ratingLabel.snp.makeConstraints { (make) in
-            make.leading.top.equalToSuperview().inset(20)
-            make.height.equalTo(40)
-        }
 
         horizontalStackView.addArrangedSubview(firstVerticalStackView)
         let secondVerticalStackView = UIStackView()
